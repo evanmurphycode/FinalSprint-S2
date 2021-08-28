@@ -9,32 +9,25 @@ function App() {
 
   function Home() {
     return (
-      <div>
-        <p>
-          Pets.com’s aim is to blend the joy of pet ownership with an
-          informative yet easy to navigate user interface meant to enrich the
-          lives of owners and their pets. If properly cared for animals can be
-          an endless supply of comfort, support, and entertainment, while at the
-          same time teaching adults and children the responsibilities of caring
-          for another living creature. - Citation at:
-          http://petcyclopedia.com/#sthash.m4SB7mpZ.dpuf
-        </p>
+      <body className="Body">
+        <div>
+          <p className="HomeP">
+            Pets.com’s aim is to blend the joy of pet ownership with an
+            informative yet easy to navigate user interface meant to enrich the
+            lives of owners and their pets. If properly cared for animals can be
+            an endless supply of comfort, support, and entertainment, while at
+            the same time teaching adults and children the responsibilities of
+            caring for another living creature. - Citation at:
+            http://petcyclopedia.com/#sthash.m4SB7mpZ.dpuf
+          </p>
 
-        <button className="GettingStartedButton">Let's Get Started!</button>
+          <button className="GettingStartedButton">Let's Get Started!</button>
 
-        <footer className="Footer">
-          <h6>Footer</h6>
-        </footer>
-      </div>
-    );
-  }
-
-  function Card(props) {
-    return (
-      <div className="Card">
-        <h2 className="CartTitle">{props.title}</h2>
-        <p className="CardContent">{props.description}</p>
-      </div>
+          <footer className="Footer">
+            <h6>Footer</h6>
+          </footer>
+        </div>
+      </body>
     );
   }
 
@@ -42,6 +35,17 @@ function App() {
     return (
       <div>
         <h3>Dogs</h3>
+      </div>
+    );
+  }
+
+  //<img src={props.image} className="CardImage"></img>
+
+  function Card(props) {
+    return (
+      <div className="Card">
+        <h2 className="CartTitle">{props.title}</h2>
+        <p className="CardContent">{props.description}</p>
       </div>
     );
   }
@@ -58,7 +62,7 @@ function App() {
     let cats_array = await response.data;
     let cats_cards = [];
 
-    console.log(response.data[0]);
+    //console.log(response.data[0]);
     setCats(cats_array);
     return;
   };
@@ -79,7 +83,11 @@ function App() {
           {cats.length > 0 &&
             cats.map((cat) => {
               return (
-                <Card title={cat.name} description={cat.description}></Card>
+                <Card
+                  //image={cat.image.url}
+                  title={cat.name}
+                  description={cat.description}
+                ></Card>
               );
             })}
         </div>
@@ -94,7 +102,7 @@ function App() {
   function AboutUs() {
     return (
       <div>
-        <p>
+        <p className="AboutUsP">
           Hello, we are Chris Lynch, Evan Murphy and Erin Slaney. We are
           Software Development students and for our final project in semester
           two we have decided to create an Pet directory app. We decided to do
@@ -112,11 +120,13 @@ function App() {
 
   return (
     <Router>
-      <h1>Pets.com</h1>
+      <h1 className="Header">Pets.com</h1>
       <nav className="NavigationBar">
-        <Link to="/">Home</Link>
-        <Link to="/pets">Pets</Link>
-        <Link to="/about">About Us</Link>
+        <div className="TopNav">
+          <Link to="/">Home</Link>
+          <Link to="/pets">Pets</Link>
+          <Link to="/about">About Us</Link>
+        </div>
       </nav>
       <Switch>
         <Route exact path="/" component={Home}></Route>

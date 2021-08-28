@@ -36,3 +36,81 @@
     transform: rotate(360deg);
   }
 }
+
+/* Erin's CSS */
+
+.Header {
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 32px;
+}
+
+.NavigationBar {
+  background-image: url("krista-mangulsone-9gz3wfHr65U-unsplash.jpg");
+  min-height: 250px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: relative;
+  padding: 15px;
+  margin: 15px;
+
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+li {
+  font-family: Arial;
+  color: black;
+  text-decoration: none;
+  list-style-type: none;
+  font-size: large;
+  float: left;
+  margin: 15px;
+  text-shadow: 1px 1px rgb(77, 76, 76);
+}
+
+a:link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.GettingStartedButton {
+  position: relative;
+  justify-self: center;
+  background-color: rgb(122, 140, 156);
+  border: none;
+  color: white;
+  padding: 15px 28px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 12px;
+  transition-duration: 0.2s;
+}
+.GettingStartedButton:hover {
+  background-color: rgb(207, 214, 221);
+  color: white;
+}
+
+.HomeP {
+  font-family: arial;
+  border: black solid 2px;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 10px;
+}
+
+.AboutUsP {
+  font-family: arial;
+  border: black solid 2px;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 10px;
+}
