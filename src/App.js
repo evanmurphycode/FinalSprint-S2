@@ -50,6 +50,23 @@ function App() {
     );
   }
 
+  // const DogList = async () => {
+  //   let response = await axios.get(`https://dog.ceo/api/breeds/list/all`, {
+  //     headers: {
+  //       "Content-type": "application/json",
+  //     },
+  //   });
+
+  //   let dogs_array = await response.data;
+  //   let dog_cards = [];
+
+  //   console.log(JSON.stringify(response.data));
+
+  //   setDogs(dogs_array);
+
+  //   return;
+  // };
+
   const CatList = async () => {
     let response = await axios.get(`https://api.thecatapi.com/v1/breeds/`, {
       headers: {
@@ -92,6 +109,13 @@ function App() {
             })}
         </div>
 
+        {/* <div>
+          {dogs.length > 0 &&
+            dogs.map((dog) => {
+              return <Card title={dog.name}></Card>;
+            })}
+        </div> */}
+
         <footer className="Footer">
           <h6>Footer</h6>
         </footer>
@@ -120,7 +144,14 @@ function App() {
 
   return (
     <Router>
-      <h1 className="Header">Pets.com</h1>
+      <div className="HeaderGrid">
+        <img
+          className="PawIcon"
+          src="https://image.flaticon.com/icons/png/512/64/64431.png"
+          alt="paw"
+        ></img>
+        <h1 className="Header">Pets.com</h1>
+      </div>
       <nav className="NavigationBar">
         <div className="TopNav">
           <Link to="/">Home</Link>
