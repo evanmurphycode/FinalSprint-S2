@@ -6,6 +6,8 @@ import axios from "axios";
 function App() {
   const [cats, setCats] = useState([]);
   const key = "2abd08c8-0f79-4f1e-b5a3-c25e5ae82a50";
+  const [dogs, setDogs] = useState([]);
+  const dogkey = "ab4c39cc-ca87-4304-ad1f-eaba9d86880f";
 
   function Home() {
     return (
@@ -21,7 +23,9 @@ function App() {
             http://petcyclopedia.com/#sthash.m4SB7mpZ.dpuf
           </p>
 
-          <button className="GettingStartedButton">Let's Get Started!</button>
+          <Link to="/pets">
+            <button className="GettingStartedButton">Let's Get Started!</button>
+          </Link>
 
           <footer className="Footer">
             <h6>Footer</h6>
@@ -31,17 +35,9 @@ function App() {
     );
   }
 
-  function Dogs() {
-    return (
-      <div>
-        <h3>Dogs</h3>
-      </div>
-    );
-  }
-
   //<img src={props.image} className="CardImage"></img>
 
-  function Card(props) {
+  function CatCard(props) {
     return (
       <div className="Card">
         <h2 className="CartTitle">{props.title}</h2>
@@ -50,22 +46,33 @@ function App() {
     );
   }
 
-  // const DogList = async () => {
-  //   let response = await axios.get(`https://dog.ceo/api/breeds/list/all`, {
-  //     headers: {
-  //       "Content-type": "application/json",
-  //     },
-  //   });
+  function DogCard(props) {
+    return (
+      <div className="Card">
+        <h2 className="CartTitle">{props.title}</h2>
+        <p className="CardContent">{props.temperament}</p>
+      </div>
+    );
+  }
 
-  //   let dogs_array = await response.data;
-  //   let dog_cards = [];
+  const DogList = async () => {
+    let response = await axios.get(`https://api.thedogapi.com/v1/breeds/`, {
+      headers: {
+        "x-api-key": dogkey,
+        "access-control-allow-origin": "*",
+        "Content-type": "application/json",
+      },
+    });
 
-  //   console.log(JSON.stringify(response.data));
+    let dogs_array = await response.data;
+    let dog_cards = [];
 
-  //   setDogs(dogs_array);
+    //console.log(JSON.stringify(response.data));
 
-  //   return;
-  // };
+    setDogs(dogs_array);
+
+    return;
+  };
 
   const CatList = async () => {
     let response = await axios.get(`https://api.thecatapi.com/v1/breeds/`, {
@@ -92,7 +99,7 @@ function App() {
         <button onClick={CatList} className="CatsButton">
           Cats
         </button>
-        <button onClick={Dogs} className="DogsButton">
+        <button onClick={DogList} className="DogsButton">
           Dogs
         </button>
 
@@ -100,21 +107,27 @@ function App() {
           {cats.length > 0 &&
             cats.map((cat) => {
               return (
-                <Card
+                <CatCard
                   //image={cat.image.url}
                   title={cat.name}
                   description={cat.description}
-                ></Card>
+                ></CatCard>
               );
             })}
         </div>
 
-        {/* <div>
+        <div>
           {dogs.length > 0 &&
             dogs.map((dog) => {
-              return <Card title={dog.name}></Card>;
+              return (
+                <DogCard
+                  image={dog.image}
+                  title={dog.name}
+                  temperament={dog.temperament}
+                ></DogCard>
+              );
             })}
-        </div> */}
+        </div>
 
         <footer className="Footer">
           <h6>Footer</h6>
