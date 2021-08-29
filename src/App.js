@@ -166,11 +166,17 @@ function App() {
         <h1 className="Header">Pets.com</h1>
       </div>
       <nav className="NavigationBar">
-        <div className="TopNav">
-          <Link to="/">Home</Link>
-          <Link to="/pets">Pets</Link>
-          <Link to="/about">About Us</Link>
-        </div>
+        <ul>
+          <li>
+            <Link to="/"> Home </Link>
+          </li>
+          <li>
+            <Link to="/pets"> Pets </Link>
+          </li>
+          <li>
+            <Link to="/about"> About Us </Link>
+          </li>
+        </ul>
       </nav>
       <Switch>
         <Route exact path="/" component={Home}></Route>
