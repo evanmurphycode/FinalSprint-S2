@@ -26,11 +26,40 @@ function App() {
           <Link to="/pets">
             <button className="GettingStartedButton">Let's Get Started!</button>
           </Link>
-
-          <footer className="Footer">
-            <h6>Footer</h6>
-          </footer>
         </div>
+
+        <footer className="Footer">
+          <p> Contact Us: info@pets.com</p>
+          <p>Address: 644 topsail Road, St. John's, NL A1E 2E3</p>
+
+          <ul>
+            <li>
+              Pets are humanizing. They remind us we have an obligation and
+              responsibility to preserve and nurture and care for all life.”
+              James Cromwell, American Actor
+            </li>
+
+            <li>
+              “A dog is the only thing on earth that loves you more than you
+              love yourself.” Josh Billings, American Comedian
+            </li>
+
+            <li>
+              “Until one has loved an animal, a part of one’s soul remains
+              unawakened.” Anatole France, French Poet
+            </li>
+
+            <li>
+              “Time spent with cats is never wasted.” Sigmund Freud, Austrian
+              Psychoanalyst
+            </li>
+
+            <li>
+              “Pets understand humans better than humans do.” Ruchi Prabhu,
+              Indian Author
+            </li>
+          </ul>
+        </footer>
       </body>
     );
   }
@@ -41,7 +70,8 @@ function App() {
     return (
       <div className="Card">
         <h2 className="CartTitle">{props.title}</h2>
-        <p className="CardContent">{props.description}</p>
+        <p className="CardContent">Description: {props.description}</p>
+        <p className="CardContent">Lifespan: {props.lifespan} years</p>
       </div>
     );
   }
@@ -50,7 +80,8 @@ function App() {
     return (
       <div className="Card">
         <h2 className="CartTitle">{props.title}</h2>
-        <p className="CardContent">{props.temperament}</p>
+        <p className="CardContent">Temperament: {props.temperament}</p>
+        <p className="CardContent">Lifespan: {props.lifespan} years</p>
       </div>
     );
   }
@@ -111,6 +142,7 @@ function App() {
                   //image={cat.image.url}
                   title={cat.name}
                   description={cat.description}
+                  lifespan={cat.life_span}
                 ></CatCard>
               );
             })}
@@ -124,6 +156,7 @@ function App() {
                   image={dog.image}
                   title={dog.name}
                   temperament={dog.temperament}
+                  lifespan={dog.life_span}
                 ></DogCard>
               );
             })}
