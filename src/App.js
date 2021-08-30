@@ -125,7 +125,7 @@ function App() {
   function Pets() {
     return (
       <div>
-        <p>What kind of pet are you looking for?</p>
+        <p className="PetsPage">What kind of pet are you looking for?</p>
 
         <button onClick={CatList} className="CatsButton">
           Cats
@@ -163,7 +163,36 @@ function App() {
         </div>
 
         <footer className="Footer">
-          <h6>Footer</h6>
+          <p> Contact Us: info@pets.com</p>
+          <p>Address: 644 topsail Road, St. John's, NL A1E 2E3</p>
+
+          <ul>
+            <li>
+              Pets are humanizing. They remind us we have an obligation and
+              responsibility to preserve and nurture and care for all life.”
+              James Cromwell, American Actor
+            </li>
+
+            <li>
+              “A dog is the only thing on earth that loves you more than you
+              love yourself.” Josh Billings, American Comedian
+            </li>
+
+            <li>
+              “Until one has loved an animal, a part of one’s soul remains
+              unawakened.” Anatole France, French Poet
+            </li>
+
+            <li>
+              “Time spent with cats is never wasted.” Sigmund Freud, Austrian
+              Psychoanalyst
+            </li>
+
+            <li>
+              “Pets understand humans better than humans do.” Ruchi Prabhu,
+              Indian Author
+            </li>
+          </ul>
         </footer>
       </div>
     );
@@ -182,7 +211,36 @@ function App() {
         </p>
 
         <footer className="Footer">
-          <h6>Footer</h6>
+          <p> Contact Us: info@pets.com</p>
+          <p>Address: 644 topsail Road, St. John's, NL A1E 2E3</p>
+
+          <ul>
+            <li>
+              Pets are humanizing. They remind us we have an obligation and
+              responsibility to preserve and nurture and care for all life.”
+              James Cromwell, American Actor
+            </li>
+
+            <li>
+              “A dog is the only thing on earth that loves you more than you
+              love yourself.” Josh Billings, American Comedian
+            </li>
+
+            <li>
+              “Until one has loved an animal, a part of one’s soul remains
+              unawakened.” Anatole France, French Poet
+            </li>
+
+            <li>
+              “Time spent with cats is never wasted.” Sigmund Freud, Austrian
+              Psychoanalyst
+            </li>
+
+            <li>
+              “Pets understand humans better than humans do.” Ruchi Prabhu,
+              Indian Author
+            </li>
+          </ul>
         </footer>
       </div>
     );
@@ -199,17 +257,11 @@ function App() {
         <h1 className="Header">Pets.com</h1>
       </div>
       <nav className="NavigationBar">
-        <ul>
-          <li>
-            <Link to="/"> Home </Link>
-          </li>
-          <li>
-            <Link to="/pets"> Pets </Link>
-          </li>
-          <li>
-            <Link to="/about"> About Us </Link>
-          </li>
-        </ul>
+        <Link to="/"> Home </Link>
+
+        <Link to="/pets"> Pets </Link>
+
+        <Link to="/about"> About Us </Link>
       </nav>
       <Switch>
         <Route exact path="/" component={Home}></Route>
